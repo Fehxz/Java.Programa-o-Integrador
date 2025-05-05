@@ -1,4 +1,4 @@
-package Exercicios;
+package Exec;
 
 public class Inc {
 
