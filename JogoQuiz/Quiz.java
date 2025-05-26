@@ -17,11 +17,9 @@ public class Quiz {
             pontos[i] = 0;
         }
 
-        // Escolher dificuldade
         String[] niveis = {"Fácil", "Médio", "Difícil"};
         String nivelEscolhido = (String) JOptionPane.showInputDialog(null, "Escolha o nível de dificuldade:", "Nível", JOptionPane.QUESTION_MESSAGE, null, niveis, niveis[0]);
 
-        // Definindo perguntas conforme dificuldade
         String[][] perguntas;
         
         if ("Fácil".equalsIgnoreCase(nivelEscolhido)) {
@@ -51,7 +49,6 @@ public class Quiz {
             };
         }
 
-        // Começar o quiz
         for (int i = 0; i < perguntas.length; i++) {
             String pergunta = perguntas[i][0];
             String respostaCorreta = perguntas[i][1];
@@ -64,7 +61,6 @@ public class Quiz {
             }
         }
 
-        // Mostrar resultados
         String resultado = "Pontuação Final:\n";
         int maiorPontuacao = -1;
         String vencedores = "";
