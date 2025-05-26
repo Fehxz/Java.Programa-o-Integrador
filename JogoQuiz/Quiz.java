@@ -17,37 +17,41 @@ public class Quiz {
             pontos[i] = 0;
         }
 
+        // Escolher dificuldade
         String[] niveis = {"Fácil", "Médio", "Difícil"};
         String nivelEscolhido = (String) JOptionPane.showInputDialog(null, "Escolha o nível de dificuldade:", "Nível", JOptionPane.QUESTION_MESSAGE, null, niveis, niveis[0]);
-        
+
+        // Definindo perguntas conforme dificuldade
         String[][] perguntas;
         
         if ("Fácil".equalsIgnoreCase(nivelEscolhido)) {
             perguntas = new String[][] {
                 {"Qual palavra-chave é usada para definir uma classe em Java?", "class"},
-                {"Qual tipo de dado é usado para armazenar números inteiros em Java?", "int"},
-                {"Qual é o nome do método principal de um programa Java?", "main"},
-                {"Qual operador é usado para comparar se dois valores são iguais em Java?", "=="},
-                {"Qual símbolo é usado para comentar uma linha em Java?", "//"}
+                {"Qual linguagem é usada para rodar programas em várias plataformas?", "java"},
+                {"Qual é o nome do método que inicia um programa Java?", "main"},
+                {"Qual tipo de dado usamos para números inteiros?", "int"},
+                {"Java é uma linguagem de programação orientada a...?", "objetos"}
             };
         } else if ("Médio".equalsIgnoreCase(nivelEscolhido)) {
             perguntas = new String[][] {
-                {"Qual palavra-chave é usada para definir uma classe em Java?", "class"},
-                {"Qual tipo de dado é usado para armazenar números inteiros em Java?", "int"},
-                {"Qual é o nome do método principal de um programa Java?", "main"},
-                {"Qual operador é usado para comparar se dois valores são iguais em Java?", "=="},
+                {"Qual comando cria um laço que executa enquanto a condição for verdadeira?", "while"},
+                {"Palavra usada para importar pacotes em Java?", "import"},
+                {"Tipo de dados que armazena valores verdadeiros ou falsos?", "boolean"},
+                {"Operador que compara referências de objetos?", "=="},
                 {"Qual símbolo é usado para comentar uma linha em Java?", "//"}
             };
-        } else { 
+        } else { // Difícil
             perguntas = new String[][] {
-                {"Qual palavra-chave é usada para definir uma classe em Java?", "class"},
-                {"Qual tipo de dado é usado para armazenar números inteiros em Java?", "int"},
-                {"Qual é o nome do método principal de um programa Java?", "main"},
-                {"Qual operador é usado para comparar se dois valores são iguais em Java?", "=="},
-                {"Qual símbolo é usado para comentar uma linha em Java?", "//"}
+                {"Palavra que define que um método ou classe pode ser acessado por qualquer outro código?", "public"},
+                {"Comando usado para sair de um loop imediatamente?", "break"},
+                {"Qual modificador limita o acesso somente à própria classe?", "private"},
+                {"Comando que termina um método e retorna um valor?", "return"},
+                {"Conceito de reutilizar código entre classes?", "herança"}
+
             };
         }
 
+        // Começar o quiz
         for (int i = 0; i < perguntas.length; i++) {
             String pergunta = perguntas[i][0];
             String respostaCorreta = perguntas[i][1];
@@ -60,6 +64,7 @@ public class Quiz {
             }
         }
 
+        // Mostrar resultados
         String resultado = "Pontuação Final:\n";
         int maiorPontuacao = -1;
         String vencedores = "";
